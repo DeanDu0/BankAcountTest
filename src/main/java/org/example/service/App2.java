@@ -3,10 +3,15 @@ package org.example.service;
 import org.example.config.AnnotationConfigClass;
 import org.example.dao.AcountPojo;
 import org.example.mapper.AcountMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Service;
 
+//@Service
 public class App2 {
+    //@Autowired
+    //private AcountMapper acountMapper;
     public static void main(String[] args) {
         ApplicationContext ioc=new AnnotationConfigApplicationContext(AnnotationConfigClass.class);
         AcountMapper acountMapper=ioc.getBean(AcountMapper.class);

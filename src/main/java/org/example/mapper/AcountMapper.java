@@ -12,4 +12,8 @@ public interface AcountMapper {
     @Select("select * from tbl_acount where id=#{id}")
     public AcountPojo getByID(Integer id);
 
+    @Update("update tbl_acount set money=money+#{money} where name=#{name}")
+    public void outMoney(@Param("name") String name,@Param("money") Integer money);
+    @Update("update tbl_acount set money=money-#{money} where name=#{name}")
+    public void inMoney(@Param("name") String name,@Param("money") Integer money);
 }
